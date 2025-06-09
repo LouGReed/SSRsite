@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision-Making Pathways | Lou</title>
+    <style>
+        /* Copy root colors */
+        :root {
+            --text: #0d1011;          /* Deep space black */
+            --background: #ffffff;     /* Pure white background */
+            --accent: #2B4BF2;        /* Electric blue */
+            --secondary: #f4f4f8;     /* Subtle gray-white */
+            --light-accent: #8C52FF;  /* Cosmic purple */
+            --dark-accent: #1E3FE4;   /* Deep space blue */
+            --neutral: #2A2A3C;       /* Dark slate */
+        }
+
+        /* Basic styles */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            background: var(--background);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation styles */
+        nav {
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            position: sticky;
+            top: 0;
+            background: var(--background);
+            z-index: 100;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            transition: color 0.3s ease;
+        }
+
+        /* Blog post specific styles */
+        .blog-post {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .blog-header h1 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            letter-spacing: -0.02em;
+        }
+
+        .blog-feature-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .blog-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .emphasis {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 2rem 4rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.6rem;
+            margin: 2rem auto;
+            transition: all 0.4s ease;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, var(--accent), var(--light-accent));
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(43, 75, 242, 0.2);
+            color: white;
+        }
+
+        .cta-button:active {
+            transform: translateY(-2px) scale(0.99);
+            box-shadow: 0 5px 15px rgba(43, 75, 242, 0.1);
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        /* Footer styles */
+        footer {
+            background: var(--secondary);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--neutral);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .social-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.8rem 1.5rem;
+            background: var(--background);
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-links a:hover {
+            color: white;
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(43, 75, 242, 0.2);
+        }
+
+        .social-links a svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .social-links a:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(43, 75, 242, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="SSR_site_13.html">Home</a>
+        <a href="blog.html" class="blog-button">Blog</a>
+    </nav>
+
+    <article class="blog-post">
+        <header class="blog-header">
+            <h1> A Black Mirror Sales Masterclass</h1>
+        </header>
+        
+        <img src="images/gaynor.jpg" alt="Black Mirror Sales Analysis" class="blog-feature-image">
+        
+        <div class="blog-content">
+            <p>Has anyone watched the new season of Black Mirror?? My attention was drawn to one character, Ms. GAYNOR, who is literally a <span class="emphasis">Closer</span>.</p>
+
+            <p>In Season 7, Ep. 1, "Common People", a married couple struggles after the wife, Amanda, suffers a horrific brain injury. A company called Rivermind sells the husband, Mike, on a brain implant that keeps Amanda alive, but devastates them financially. It's dark, but that's not why we're talking about it.</p>
+
+            <p>The RiverMind Sales rep, Gaynor, (Tracey Ellis Ross) is literally the face of evil. But she's also... <span class="emphasis">a really good closer</span>.</p>
+
+            <p>Let's break down her masterclass in closing:</p>
+
+            <p>First, she <span class="emphasis">HOLDS THE FRAME OF EXPERT</span> and then offers <span class="emphasis">SOCIAL PROOF</span>. She appears in a hospital room, chart in hand, iPad at the ready. She pops in right at the correct moment, when a doctor has briefed him on the Rivermind service, and he's the hottest lead possible.</p>
+
+            <p>"Mike" she says calmly. "I'm Gaynor, from Rivermind." She pauses. "Come with me". He follows her, (literally <span class="emphasis">BUILDING THE YES LADDER</span>).</p>
+
+            <p>"Rivermind is a revolution in neurological science. How it works is both high tech and incredibly simple". She speaks in expert language, and her perfectly russian manicured nails tap a diagram on the iPad. "We take an imprint of the affected part of her neural structure, and we clone it, ONTO our servers". Mike pauses, and she <span class="emphasis">shifts from expert language to plain speak</span>. "Basically, we make a backup"</p>
+
+            <p>When Mike objects about testing, she shifts to <span class="emphasis">SOCIAL PROOF from her own life</span>. "I am living proof." She shares her personal story of survival, building credibility and trust.</p>
+
+            <p>She returns to <span class="emphasis">QBS</span>, using her lifestyle proof to build rapport. "My kids say I'm the same pain in the ass!" They laugh together. "Do you have children?" She's casual. Calm. Perfect in her apricot blazer.</p>
+
+            <p>"Not yet" admits Mike, revealing his deepest pain point. "Been close a couple of times". He looks down. "Mike" she reengages his gaze, leaning forward, very close to him, as she builds out her pitch with its greatest point of value <span class="emphasis">"this will give you time."</span></p>
+
+            <p>She moves to <span class="emphasis">presumptive closing language</span>: "So a couple things you need to know..." And when the price objection comes? She <span class="emphasis">CONTINUES TO BUILD VALUE AND URGENCY</span>.</p>
+
+            <p>"Seriously, it's less than you think- We're really trying to drive uptake...so, our pricing is really reasonable, and- the surgery is free". And for streaming, we run a subscription model so- it's 300 a month. And then she <span class="emphasis">STFU</span>.</p>
+
+
+            <p>"ok" CLOSED.</p>
+
+         <div class="cta-section">
+             <a href="https://calendly.com/your-link" class="cta-button">
+                    Let's Talk About Closing
+             </a>
+
+        </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="social-links">
+            <a href="mailto:Lou.madeline.grant@gmail.com">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                Email
+            </a>
+            <a href="https://instagram.com/lou_closes">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                Instagram
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

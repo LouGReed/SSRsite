@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lou | High-Ticket Closer</title>
+    <style>
+        :root {
+            --text: #2A2522;          /* Rich dark brown */
+            --background: #FDF8F5;    /* Warm white */
+            --accent: #D4A373;        /* Warm caramel */
+            --secondary: #E9D5C5;     /* Soft peach */
+            --light-bg: #FAF3ED;      /* Creamy background */
+            --dark-accent: #B88C5D;   /* Deep caramel */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            background: var(--background);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Andy's Typography */
+        .hero-text h1 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            letter-spacing: -0.03em;
+            color: var(--dark-accent);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 600;
+            font-size: 2rem;
+            letter-spacing: -0.02em;
+        }
+
+        nav {
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            position: sticky;
+            top: 0;
+            background: var(--background);
+            z-index: 100;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            transition: color 0.3s ease;
+        }
+
+        .blog-button {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--accent);
+            color: white !important;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .blog-button:hover {
+            background: var(--dark-accent);
+        }
+
+        .section {
+            padding: 6rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section.light {
+            background: var(--light-bg);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border: 1px solid var(--secondary);
+            border-radius: 4px;
+        }
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .intro {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .about-section {
+            display: grid;
+            grid-template-columns: 2fr 3fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border: 1px solid var(--secondary);
+            border-radius: 4px;
+        }
+
+        /* Blog Grid Styles */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .blog-card {
+            background: var(--background);
+            border: 1px solid var(--secondary);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(179, 140, 93, 0.1);
+            border-color: var(--accent);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: 1.5rem;
+            background: linear-gradient(to bottom, var(--background), var(--light-bg));
+        }
+
+        .blog-card h3 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-accent);
+            letter-spacing: -0.01em;
+        }
+
+        .blog-card p {
+            font-size: 0.95rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Gallery Wall Styles */
+        .gallery-section {
+            padding: 6rem 4rem;
+            background: var(--background);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .gallery-item.feature {
+            grid-column: span 2;
+            grid-row: span 2;
+            grid-column-start: 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 1200px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .video-section {
+            text-align: center;
+            background: var(--light-bg);
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background: var(--light-bg);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .social-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .hero, .about-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#story">My Story</a>
+        <a href="blog.html" class="blog-button">Blog</a>
+        <a href="#video">Watch</a>
+    </nav>
+
+    <section class="section" id="hi">
+        <div class="hero">
+            <img src="images/headshot.jpg" alt="Your Name" class="hero-image">
+            <div class="hero-text">
+                <h1>Hi, I'm Lou.</h1>
+                <p class="intro">
+                    With a background in neuroscience and tech, I help creators and course builders turn meaningful conversations into high-ticket sales.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section light" id="story">
+        <div class="about-section">
+            <img src="images/casualphoto.jpg" alt="About Me" class="about-image">
+            <div>
+                <h2>My Story</h2>
+                <p>
+                    Going from the neuroscience lab to tech, I learned how to attract users, craft sales funnels, and make products sticky. I leverage my understanding of neuroscience to tap into how the brain processes trust signals, forms emotional connections, and makes high-stakes decisions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="blog">
+        <h2>I write about neuroscience and sales</h2>
+        <div class="blog-grid">
+            <a href="blog-1.html" class="blog-card">
+                <img src="images/blog-1.jpg" alt="Trust Signals">
+                <div class="blog-card-content">
+                    <h3>The Neuroscience of Trust Signals</h3>
+                    <p>How your brain processes authenticity in sales conversations</p>
+                </div>
+            </a>
+            <a href="blog-2.html" class="blog-card">
+                <img src="images/blog-2.jpg" alt="Decision Making">
+                <div class="blog-card-content">
+                    <h3>Decision-Making Pathways</h3>
+                    <p>Understanding the psychology behind high-ticket purchases</p>
+                </div>
+            </a>
+            <a href="blog-3.html" class="blog-card">
+                <img src="images/blog-3.jpg" alt="Connection">
+                <div class="blog-card-content">
+                    <h3>Building Genuine Connection</h3>
+                    <p>The science of authentic relationship building in sales</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="section video-section" id="video">
+        <h2>See Me in Action Here</h2>
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/your-video-id" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <section class="gallery-section" id="inspiration">
+        <h2>Inspiration Gallery</h2>
+        <div class="gallery-grid">
+            <!-- Top row [1][2][3][4] -->
+            <div class="gallery-item">
+                <img src="images/gallery1.jpg" alt="Inspiration 1">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery2.jpg" alt="Inspiration 2">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery3.jpg" alt="Inspiration 3">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery4.jpg" alt="Inspiration 4">
+            </div>
+
+            <!-- Second row [5][6,6][7] -->
+            <div class="gallery-item">
+                <img src="images/gallery5.jpg" alt="Inspiration 5">
+            </div>
+            <div class="gallery-item feature">
+                <img src="images/gallery6.jpg" alt="Inspiration 6">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery7.jpg" alt="Inspiration 7">
+            </div>
+
+            <!-- Third row [8][6,6][9] -->
+            <div class="gallery-item">
+                <img src="images/gallery8.jpg" alt="Inspiration 8">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery9.jpg" alt="Inspiration 9">
+            </div>
+
+            <!-- Bottom row [10][11][12][13] -->
+            <div class="gallery-item">
+                <img src="images/gallery10.jpg" alt="Inspiration 10">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery11.jpg" alt="Inspiration 11">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery12.jpg" alt="Inspiration 12">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery13.jpg" alt="Inspiration 13">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://twitter.com/yourhandle">Twitter</a>
+            <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+            <a href="https://instagram.com/lou_closes">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>
